@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter Posts</title>
+</head>
+<body>
+    <h1>Filter Posts</h1>
+    <form action="https://css1.seattleu.edu/~rspannaus/filter.php" method="POST">
+        <select name="column" required>
+            <option value="tags">Tags</option>
+            <option value="post_body">Post Body</option>
+            <option value="username">Username</option>
+        </select>
+        <input type="text" name="filter_value" placeholder="Filter Value" required>
+        <button type="submit">Filter</button>
+    </form>
+    <script>
+        let isNavigatingAway = false;
+    
+        // Set flag when user is navigating (e.g., clicking on a link or button)
+        document.querySelectorAll('a').forEach(function (link) {
+            link.addEventListener('click', function () {
+                isNavigatingAway = true;
+            });
+        });
+    
+        window.addEventListener("beforeunload", function (event) {
+            if (!isNavigatingAway) {
+                // Only send the beacon if the user is closing the tab/window (not navigating)
+                navigator.sendBeacon("https://css1.seattleu.edu/~rspannaus/Final/functions/login/logout.php");
+            }
+        });
+    </script>
+</body>
+</html>

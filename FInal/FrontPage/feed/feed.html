@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .feed{
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="feed"> 
+        <h2>Your Feed</h2> 
+    </div>
+    <div id="feed">
+        
+        <script>
+            fetch("https://css1.seattleu.edu/~rspannaus/feed.php")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('feed').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading user info:', error));
+        </script>
+    </div> 
+</body>
+</html>

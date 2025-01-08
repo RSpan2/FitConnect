@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .user-info{
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="feed"> 
+        <h2>Your Account</h2> 
+    </div>
+    <a>Your Info</a>
+    <div id="user-info">
+
+        <script>
+            fetch("https://css1.seattleu.edu/~rspannaus/Userinfo.php")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('user-info').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading user info:', error));
+        </script>
+    </div> 
+    <a>Your Posts</a>
+    <div id="account-info">
+        
+        <script>
+            fetch("https://css1.seattleu.edu/~rspannaus/Account.php")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('account-info').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading account info:', error));
+        </script>
+    </div> 
+
+
+
+
+</body>
+</html>

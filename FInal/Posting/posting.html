@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post</title>
+	<style>
+	    textarea, input[type="text"] {
+            width: 100%; /* Make both fields span the entire available width */
+            padding: 10px; /* Add padding for better appearance */
+            margin: 10px 0; /* Add margin for spacing between fields */
+            box-sizing: border-box; /* Include padding and border in the element's total width */
+        }
+
+        /* Optional, adjust height for textarea */
+        textarea {
+            height: 150px; /* Set a fixed height for the textarea */
+        }
+	</style>
+</head>
+<body>
+    <h2>Create a Post</h2>
+    <form action="https://css1.seattleu.edu/~rspannaus/posting.php" method="POST">
+        <textarea name="PostBody" placeholder="Post Body" required></textarea>
+        <input type="text" name="Tags" placeholder="Tags">
+        <button type="submit">Post</button>
+    </form>
+</body>
+</html>
